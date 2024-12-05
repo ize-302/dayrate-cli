@@ -21,7 +21,7 @@ func HandleListRatigs() {
 	if len(ratings) > 0 {
 		for _, rating := range ratings {
 			parsedTime, _ := time.Parse(time.RFC3339, rating.Timestamp)
-			fmt.Printf("| %s  | %s |\n", parsedTime.Format(time.RFC1123), utils.FormatRating(rating.Rating))
+			fmt.Printf("| %s  | %s |\n", parsedTime.Format(time.RFC1123), utils.FormatRating(&rating.Rating))
 		}
 	} else {
 		fmt.Println("| You have no ratings yet                 |")

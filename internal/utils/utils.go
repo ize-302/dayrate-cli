@@ -9,8 +9,8 @@ import (
 	"github.com/ize-302/dayrate-cli/internal/models"
 )
 
-func FormatRating(rating int) string {
-	return fmt.Sprintf("%d/5 %s", rating, config.Emojis[rating-1])
+func FormatRating(rating *int) string {
+	return fmt.Sprintf("%d/5 %s", *rating, config.Emojis[*rating-1])
 }
 
 func IsDayRated(ratings []models.Rating) bool {
